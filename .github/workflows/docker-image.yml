@@ -1,5 +1,5 @@
 variables:
-  TAG: "crushftp10.7.1.43.java.11"
+  TAG: "crushftp10.7.1.43.java.17"
 
 before_script:
     - docker info
