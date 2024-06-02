@@ -1,0 +1,18 @@
+variables:
+  TAG: "crushftp10.7.1.43.java.11"
+
+before_script:
+    - docker info
+
+build_image:
+    script:
+        - echo Unzipping CrushFTP...
+        - unzip CrushFTP/CrushFTP10.zip -d build/
+        - echo Running docker builds with Tag [$TAG]...
+        # - podman image prune
+        #- sudo docker login  -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+        - docker build -t akshithmg/crushftpdmz/crushftp10:$TAG .
+        - docker push akshithmg/crushftpdmz/crushftp10:$TAG
+    tags:
+      - bash
+      - linux
