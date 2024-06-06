@@ -1,12 +1,10 @@
 ---
 variables:
   TAG: crushftp10.7.1.43
-before_script:
-  - docker info
 build_image:
   script:
     - echo Unzipping CrushFTP...
-    - unzip CrushFTP/CrushFTP10.zip -d build/
+    - unzip CrushFTP/CrushFTP10.zip
     - echo Running docker builds with Tag [$TAG]...
     - docker build -t akshithmg/crushftpdmz/crushftp10:$TAG .
     - docker push akshithmg/crushftpdmz/crushftp10:$TAG
