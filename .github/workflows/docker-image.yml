@@ -15,4 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
+      script:
+        - echo Unzipping CrushFTP...
+        - unzip CrushFTP/CrushFTP10.zip -d build/
+
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
