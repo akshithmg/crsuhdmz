@@ -2,7 +2,7 @@ FROM alpine:latest
 RUN apk update && apk --no-cache add openjdk17
 RUN java -version && mkdir -p /var/opt/CrushFTP10_PC
 RUN unzip .github/workflows/CrushFTP/CrushFTP10.zip -d .github/workflows/build/
-COPY .github/workflows/build/ /var/opt/CrushFTP10_PC
+COPY .github/workflows/build/CrushFTP10 /var/opt/CrushFTP10_PC
 RUN chown -Rf root:root /var/opt/CrushFTP10_PC
 RUN ls -l /var/opt/CrushFTP10_PC
 USER root:root
