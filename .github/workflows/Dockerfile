@@ -5,11 +5,11 @@ RUN touch /etc/localtime
 ENV TZ=Asia/Calcutta
 RUN cp /usr/share/zoneinfo/Asia/Calcutta /etc/localtime
 RUN java -version && mkdir -p /var/opt/CrushFTP10_PC
-ADD .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/CrushFTP10_PC/
-RUN unzip /var/opt/CrushFTP10_PC/CrushFTP10.zip
-#RUN rm -rf /var/opt/CrushFTP10_PC/CrushFTP10.zip
-RUN chown -Rf root:root /var/opt/CrushFTP10_PC
-RUN ls -l /var/opt/CrushFTP10_PC
+ADD .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/
+RUN unzip /var/opt/CrushFTP10.zip
+RUN rm -rf /var/opt/CrushFTP10.zip
+RUN chown -Rf root:root /var/opt/CrushFTP10
+RUN ls -l /var/opt/CrushFTP10
 USER root:root
-WORKDIR /var/opt/CrushFTP10_PC
-CMD java -Xms512m -Xmx4096m -jar /var/opt/CrushFTP10_PC/CrushFTP.jar -dmz 9000
+WORKDIR /var/opt/CrushFTP10
+CMD java -Xms512m -Xmx4096m -jar /var/opt/CrushFTP10/CrushFTP.jar -dmz 9000
