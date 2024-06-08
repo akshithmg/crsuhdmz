@@ -1,7 +1,5 @@
 name: CrushFTP10 Docker image
 
-env:
-      TAG: "crushftp10.7.1.43"
 on:
   push:
     branches: [ "main" ]
@@ -34,5 +32,3 @@ jobs:
           context: .
           file: .github/workflows/Dockerfile
           push: true
-          tags: $TAG
-          labels: ${{ steps.meta.outputs.labels }}
