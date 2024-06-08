@@ -19,5 +19,6 @@ jobs:
     - name: Build the Docker image
          
       run: docker build . --file .github/workflows/Dockerfile --tag $TAG
+       - docker push akshithmg/crushftpdmz:$TAG
 
             
