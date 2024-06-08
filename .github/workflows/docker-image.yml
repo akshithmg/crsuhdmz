@@ -39,4 +39,4 @@ jobs:
           context: .
           file: .github/workflows/Dockerfile
           push: true
-          tags: $TAG
+          tags: "crushftp10.7.1.43"
