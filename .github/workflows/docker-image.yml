@@ -18,7 +18,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
          
-      run: docker build . --file .github/workflows/Dockerfile --tag $TAG
-       - docker push akshithmg/crushftpdmz:$TAG
+      run:
+      - docker login -u akshithmg -p Welcome@1989
+      - docker build . --file .github/workflows/Dockerfile --tag $TAG
+       
 
             
