@@ -31,6 +31,7 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
          images: akshithmg/crushftpdmz
+         tags: '10.7.1.43'
 
       - name: Build and push Docker image
         id: push
