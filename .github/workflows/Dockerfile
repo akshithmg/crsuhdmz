@@ -4,6 +4,7 @@ RUN apk add chrony
 RUN java -version && mkdir -p /var/opt/CrushFTP10_PC
 ADD .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/CrushFTP10_PC/
 RUN unzip /var/opt/CrushFTP10_PC/CrushFTP10.zip
+RUN rm -rf /var/opt/CrushFTP10_PC/CrushFTP10.zip
 RUN chown -Rf root:root /var/opt/CrushFTP10_PC
 RUN ls -l /var/opt/CrushFTP10_PC
 USER root:root
