@@ -4,7 +4,7 @@ RUN apk --no-cache add chrony && apk --no-cache add tzdata
 RUN touch /etc/localtime
 ENV TZ=Asia/Calcutta
 RUN cp /usr/share/zoneinfo/Asia/Calcutta /etc/localtime
-RUN java -version && mkdir -p /var/opt/CrushFTP10_PC
+RUN java -version && mkdir -p /var/opt/CrushFTP10
 ADD .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/
 RUN unzip /var/opt/CrushFTP10.zip
 RUN rm -rf /var/opt/CrushFTP10.zip
