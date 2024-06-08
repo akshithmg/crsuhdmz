@@ -1,6 +1,6 @@
 FROM alpine:latest
 RUN apk update && apk --no-cache add openjdk17
-RUN apk add chrony
+RUN apk add chrony && apk add rc-update
 RUN java -version && mkdir -p /var/opt/CrushFTP10_PC
 ADD .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/CrushFTP10_PC/
 RUN unzip /var/opt/CrushFTP10_PC/CrushFTP10.zip
