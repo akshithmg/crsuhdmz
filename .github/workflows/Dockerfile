@@ -6,8 +6,8 @@ ENV TZ=Asia/Calcutta
 RUN cp /usr/share/zoneinfo/Asia/Calcutta /etc/localtime
 RUN java -version && mkdir -p /var/opt/CrushFTP10
 COPY .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/
-RUN cd /var/opt/
 RUN unzip /var/opt/CrushFTP10.zip
+RUN mv CrushFTP10 /var/opt/
 RUN rm -rf /var/opt/CrushFTP10.zip
 RUN chown -Rf root:root /var/opt/CrushFTP10
 RUN ls -l /var/opt/CrushFTP10
