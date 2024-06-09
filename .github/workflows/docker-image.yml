@@ -1,4 +1,4 @@
-name: CrushFTP10 Docker Image
+name: CrushFTP10 DMZ Docker Image
 
 on:
   push:
