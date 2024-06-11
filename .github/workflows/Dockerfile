@@ -1,6 +1,7 @@
 FROM alpine:latest
 RUN apk update && apk --no-cache add openjdk17
-RUN apk --no-cache add chrony && apk --no-cache add tzdata
+#RUN apk --no-cache add chrony && apk --no-cache add tzdata
+RUN apk --no-cache add tzdata
 #RUN touch /etc/localtime
 ENV TZ=Asia/Calcutta
 #RUN cp /usr/share/zoneinfo/Asia/Calcutta /etc/localtime
