@@ -1,7 +1,6 @@
 FROM alpine:latest
 RUN apk update && apk --no-cache add openjdk17
 RUN apk --no-cache add tzdata
-#ENV TZ=Asia/Calcutta
 ENV TZ=Australia/Melbourne
 RUN java -version && mkdir -p /var/opt/CrushFTP10
 COPY .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/
