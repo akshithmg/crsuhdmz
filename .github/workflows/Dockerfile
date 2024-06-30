@@ -3,8 +3,11 @@ RUN apk update && apk --no-cache add openjdk17
 RUN apk --no-cache add tzdata
 ENV TZ=Australia/Melbourne
 RUN java -version && mkdir -p /var/opt/CrushFTP10
-COPY .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/
-RUN unzip /var/opt/CrushFTP10.zip -d /var/opt/
+WORKDIR /var/opt/
+RUN wget https://www.crushftp.com/early10/CrushFTP10.zip
+RUN unzip CrushFTP10.zip
+#COPY .github/workflows/CrushFTP/CrushFTP10.zip /var/opt/
+#RUN unzip /var/opt/CrushFTP10.zip -d /var/opt/
 RUN rm -rf /var/opt/CrushFTP10.zip
 RUN chown -Rf root:root /var/opt/CrushFTP10
 RUN ls -l /var/opt/CrushFTP10
