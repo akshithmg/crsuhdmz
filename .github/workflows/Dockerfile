@@ -10,4 +10,4 @@ RUN chown -Rf root:root /var/opt/CrushFTP10
 RUN ls -l /var/opt/CrushFTP10
 USER root:root
 WORKDIR /var/opt/CrushFTP10
-CMD java -Xms512m -Xmx4096m -jar /var/opt/CrushFTP10/CrushFTP.jar -dmz 9000
+CMD java -Xms512m -Xmx1024m -jar /var/opt/CrushFTP10/CrushFTP.jar -dmz 9000
